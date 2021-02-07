@@ -1,6 +1,6 @@
 {
     "name": "IcarusColorPicker",
-    "version_number": "1.0.0",
+    "version_number": "1.1.0",
     "website_url": "https://github.com/Windows10CE/DSPPlugins",
     "description": "Change the color of the mecha, Icarus!",
     "dependencies": [

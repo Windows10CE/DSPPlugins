@@ -1,0 +1,5 @@
+bin/
+obj/
+.vs/
+Libs/*.dll
+Libs/*.xml

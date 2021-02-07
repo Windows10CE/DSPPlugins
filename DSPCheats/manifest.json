@@ -1,0 +1,9 @@
+{
+    "name": "DSPCheats",
+    "version_number": "1.1.0",
+    "website_url": "https://github.com/Windows10CE/DSPPlugins",
+    "description": "Adds multiple cheat options into a config file (check the readme)",
+    "dependencies": [
+        "xiaoye97-BepInEx-5.4.5"
+    ]
+}

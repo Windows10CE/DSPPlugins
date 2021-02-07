@@ -32,39 +32,39 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="0Harmony">
-      <HintPath>Libs\0Harmony.dll</HintPath>
+      <HintPath>..\Libs\0Harmony.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Assembly-CSharp.refstub">
-      <HintPath>Libs\stubs\Assembly-CSharp.refstub.dll</HintPath>
+      <HintPath>..\Libs\stubs\Assembly-CSharp.refstub.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="BepInEx">
-      <HintPath>Libs\BepInEx.dll</HintPath>
+      <HintPath>..\Libs\BepInEx.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="BepInEx.Harmony">
-      <HintPath>Libs\BepInEx.Harmony.dll</HintPath>
+      <HintPath>..\Libs\BepInEx.Harmony.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Mono.Cecil">
-      <HintPath>Libs\Mono.Cecil.dll</HintPath>
+      <HintPath>..\Libs\Mono.Cecil.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Mono.Cecil.Mdb">
-      <HintPath>Libs\Mono.Cecil.Mdb.dll</HintPath>
+      <HintPath>..\Libs\Mono.Cecil.Mdb.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Mono.Cecil.Pdb">
-      <HintPath>Libs\Mono.Cecil.Pdb.dll</HintPath>
+      <HintPath>..\Libs\Mono.Cecil.Pdb.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="MonoMod.RuntimeDetour">
-      <HintPath>Libs\MonoMod.RuntimeDetour.dll</HintPath>
+      <HintPath>..\Libs\MonoMod.RuntimeDetour.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="MonoMod.Utils">
-      <HintPath>Libs\MonoMod.Utils.dll</HintPath>
+      <HintPath>..\Libs\MonoMod.Utils.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="System">
@@ -86,11 +86,11 @@
       <Private>False</Private>
     </Reference>
     <Reference Include="UnityEngine.CoreModule">
-      <HintPath>Libs\UnityEngine.CoreModule.dll</HintPath>
+      <HintPath>..\Libs\UnityEngine.CoreModule.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="UnityEngine.refstub">
-      <HintPath>Libs\stubs\UnityEngine.refstub.dll</HintPath>
+      <HintPath>..\Libs\stubs\UnityEngine.refstub.dll</HintPath>
       <Private>False</Private>
     </Reference>
   </ItemGroup>
