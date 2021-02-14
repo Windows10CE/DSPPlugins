@@ -83,6 +83,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cheats\Cheat.cs" />
+    <Compile Include="Cheats\FreeHandcraft.cs" />
+    <Compile Include="Cheats\InstantBuild.cs" />
+    <Compile Include="Cheats\InstantHandcraft.cs" />
+    <Compile Include="Cheats\NoMachineEnergy.cs" />
+    <Compile Include="Cheats\NoMechaEnergy.cs" />
+    <Compile Include="Cheats\UnlockInstantlyCheat.cs" />
     <Compile Include="DSPCheatsPlugin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
