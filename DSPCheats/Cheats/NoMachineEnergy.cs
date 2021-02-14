@@ -29,12 +29,6 @@ namespace DSPCheats.Cheats
             __instance.consumerPool = __state;
         }
 
-        public struct EnergyHolder
-        {
-            int work;
-            int idle;
-        }
-
         [HarmonyPrefix]
         [HarmonyPatch(typeof(StationComponent), "CalcTripEnergyCost")]
         public static bool StationComponentEnergyNeededPrefix(ref StationComponent __instance, ref long __result)
