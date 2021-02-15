@@ -95,6 +95,7 @@
     <Compile Include="Cheats\UnlockInstantly.cs" />
     <Compile Include="DSPCheatsPlugin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Security.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
