@@ -15,6 +15,10 @@ InstantHandcraft - Everything you craft in the replicator will finish instantly.
 
 InstantBuild - Construction drones build things instantly.
 
+MechaSpeedMultiplier - Make Icarus walk faster.
+
+NoVeinUsage - Miners won't use up a vein's resources while mining.
+
 ## How to install?
 It's recomended to use the mod manager, r2modman-dsp (https://dsp.thunderstore.io/package/ebkr/r2modman_dsp/) although you can do it manually.
 
@@ -22,6 +26,11 @@ It's recomended to use the mod manager, r2modman-dsp (https://dsp.thunderstore.i
 If using r2modman-dsp, go to the Config Editor on the sidebar. If installed manually, edit the configuration file at BepInEx/config/com.Windows10CE.DSPCheats.cfg.
 
 ## Changelog
+2.1.0
+Added NoVeinUsage and MechaSpeedMultiplier.
+FreeHandcraft now allows you to craft things not normally craftable in your inventory.
+UnlockInstantly now allows you to select a tech and it will automatically research all the prerequisites for you.
+
 2.0.0
 Cheats now reload when you load a save
 Added instant handcraft

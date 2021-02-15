@@ -1,6 +1,6 @@
 {
     "name": "DSPCheats",
-    "version_number": "2.0.0",
+    "version_number": "2.1.0",
     "website_url": "https://github.com/Windows10CE/DSPPlugins",
     "description": "Adds multiple cheat options into a config file, reloads on new game/save load (check the readme)",
     "dependencies": [
