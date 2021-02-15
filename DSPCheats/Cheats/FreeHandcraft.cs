@@ -1,4 +1,5 @@
-﻿using System.Reflection;
+﻿using System;
+using System.Reflection;
 using HarmonyLib;
 using MonoMod.Cil;
 using MonoMod.RuntimeDetour;
@@ -19,6 +20,7 @@ namespace DSPCheats.Cheats
 
         public override void ChangeState(bool enable)
         {
+            _newGame = true;
             if (enable != _currentlyHooked)
             {
                 if (enable)
@@ -43,6 +45,28 @@ namespace DSPCheats.Cheats
         {
             __result = true;
             return false;
+        }
+
+        private static bool _newGame = true;
+        private static bool _lastItemHandcraft = false;
+
+        [HarmonyPrefix]
+        [HarmonyPatch(typeof(UIReplicatorWindow), "SetSelectedRecipeIndex")]
+        public static void MakeAllRecipesAvailablePrefix(ref UIReplicatorWindow __instance, ref int index)
+        {
+            if (__instance.selectedRecipe is not null) {
+                __instance.selectedRecipe.Handcraft = _newGame ? __instance.selectedRecipe.Handcraft : _lastItemHandcraft;
+            }
+            _lastItemHandcraft = LDB.recipes.Select(index)?.Handcraft ?? false;
+            _newGame = false;
+        }
+
+        [HarmonyPostfix]
+        [HarmonyPatch(typeof(UIReplicatorWindow), "SetSelectedRecipeIndex")]
+        public static void MakeAllRecipesAvailablePostfix(ref UIReplicatorWindow __instance)
+        {
+            if (__instance.selectedRecipe is not null)
+                __instance.selectedRecipe.Handcraft = true;
         }
 
         public static void DontTakeItemsILHook(ILContext il)
