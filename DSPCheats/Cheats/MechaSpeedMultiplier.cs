@@ -5,7 +5,7 @@ using Mono.Cecil.Cil;
 
 namespace DSPCheats.Cheats
 {
-    class MechaSpeedMultiplierCheat : Cheat
+    class MechaSpeedMultiplier : Cheat
     {
         public override string GetCheatName() => "MechaSpeedMultiplier";
         public override string GetCheatDesc() => "Increases the mecha's speed by a multiplier";

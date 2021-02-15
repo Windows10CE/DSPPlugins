@@ -16,7 +16,7 @@ namespace DSPCheats
     {
         public const string ModGuid = "com.Windows10CE.DSPCheats";
         public const string ModName = "DSPCheats";
-        public const string ModVer = "2.0.0";
+        public const string ModVer = "2.1.0";
 
         internal static Harmony harmony;
         new internal static ManualLogSource Logger;

@@ -2,7 +2,7 @@
 
 namespace DSPCheats.Cheats
 {
-    public class UnlockInstantlyCheat : Cheat
+    public class UnlockInstantly : Cheat
     {
         public override string GetCheatName() => "UnlockInstantly";
         public override string GetCheatDesc() => "Starting a research will instantly unlock it.";

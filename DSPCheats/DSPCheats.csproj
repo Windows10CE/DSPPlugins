@@ -88,10 +88,11 @@
     <Compile Include="Cheats\FreeHandcraft.cs" />
     <Compile Include="Cheats\InstantBuild.cs" />
     <Compile Include="Cheats\InstantHandcraft.cs" />
-    <Compile Include="Cheats\MechaSpeedMultiplierCheat.cs" />
+    <Compile Include="Cheats\MechaSpeedMultiplier.cs" />
     <Compile Include="Cheats\NoMachineEnergy.cs" />
     <Compile Include="Cheats\NoMechaEnergy.cs" />
-    <Compile Include="Cheats\UnlockInstantlyCheat.cs" />
+    <Compile Include="Cheats\NoVeinUsage.cs" />
+    <Compile Include="Cheats\UnlockInstantly.cs" />
     <Compile Include="DSPCheatsPlugin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
