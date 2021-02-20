@@ -28,7 +28,7 @@ If using r2modman-dsp, go to the Config Editor on the sidebar. If installed manu
 ## Changelog
 2.2.0
 Added Unlock All button to UnlockInstantly
-Added FreeHandcraft ability to craft things not normally handcraftable
+FreeHandcraft's changing of the ability to handcraft every item will no longer persist across saves if disabled.
 Fixes NoVeinUsage only patching some of the vein count decrements.
 
 2.1.0
