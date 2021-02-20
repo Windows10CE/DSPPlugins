@@ -1,5 +1,4 @@
-﻿using Mono.Cecil.Cil;
-using MonoMod.Cil;
+﻿using MonoMod.Cil;
 using MonoMod.RuntimeDetour;
 
 namespace DSPCheats.Cheats
@@ -43,6 +42,44 @@ namespace DSPCheats.Cheats
             );
 
             c.RemoveRange(8);
+
+            c.GotoNext(MoveType.Before,
+                x => x.MatchLdarg(1),
+                x => x.MatchCallOrCallvirt(typeof(PlanetFactory).GetProperty("planet").GetGetMethod()),
+                x => x.MatchLdfld(typeof(PlanetData).GetField("veinAmounts")),
+                x => x.MatchLdarg(2),
+                x => x.MatchLdloc(1),
+                x => x.MatchLdelema<VeinData>(),
+                x => x.MatchLdfld(typeof(VeinData).GetField("type")),
+                x => x.MatchLdelema<long>(),
+                x => x.MatchDup(),
+                x => x.MatchLdindI8(),
+                x => x.MatchLdcI4(1),
+                x => x.MatchConvI8(),
+                x => x.MatchSub(),
+                x => x.MatchStindI8(),
+                x => x.MatchLdarg(1),
+                x => x.MatchCallOrCallvirt(typeof(PlanetFactory).GetProperty("planet").GetGetMethod()),
+                x => x.MatchLdfld(out _),
+                x => x.MatchLdarg(2),
+                x => x.MatchLdloc(1),
+                x => x.MatchLdelema<VeinData>(),
+                x => x.MatchLdfld(typeof(VeinData).GetField("groupIndex")),
+                x => x.MatchLdelema<PlanetData.VeinGroup>(),
+                x => x.MatchDup(),
+                x => x.MatchLdfld(typeof(PlanetData.VeinGroup).GetField("amount")),
+                x => x.MatchLdcI4(1),
+                x => x.MatchConvI8(),
+                x => x.MatchSub(),
+                x => x.MatchStfld(typeof(PlanetData.VeinGroup).GetField("amount"))
+            );
+
+            var labelsToChange = c.IncomingLabels;
+
+            c.RemoveRange(28);
+
+            foreach (var label in labelsToChange)
+                label.Target = c.Next;
         }
     }
 }
