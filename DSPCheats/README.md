@@ -3,13 +3,13 @@
 Enable several cheat options in the game! Right now the options available are:
 
 
-UnlockInstantly - Whenever a technology starts being researched, it will unlock instantly.
+UnlockInstantly - Whenever a technology starts being researched, it will unlock instantly. Also adds an Unlock All button.
 
 NoMechaEnergy - Tired of running out of energy with no fuel? Make Icarus use no energy at all!
 
 NoMachineEnergy - Want to make the perfect factory without having to worry about power consumtion? Make machines use no power!
 
-FreeHandcraft - Want a creative mode where you can build anything without cost to make the perfect factory? This is for you.
+FreeHandcraft - Want a creative mode where you can build anything without cost to make the perfect factory? This is for you. Also lets you craft things you couldn't normally craft.
 
 InstantHandcraft - Everything you craft in the replicator will finish instantly.
 
@@ -26,6 +26,11 @@ It's recomended to use the mod manager, r2modman-dsp (https://dsp.thunderstore.i
 If using r2modman-dsp, go to the Config Editor on the sidebar. If installed manually, edit the configuration file at BepInEx/config/com.Windows10CE.DSPCheats.cfg.
 
 ## Changelog
+2.2.0
+Added Unlock All button to UnlockInstantly
+Added FreeHandcraft ability to craft things not normally handcraftable
+Fixes NoVeinUsage only patching some of the vein count decrements.
+
 2.1.0
 Added NoVeinUsage and MechaSpeedMultiplier.
 FreeHandcraft now allows you to craft things not normally craftable in your inventory.
