@@ -1,4 +1,7 @@
-﻿using HarmonyLib;
+﻿using System.Linq;
+using UnityEngine;
+using UnityEngine.UI;
+using HarmonyLib;
 
 namespace DSPCheats.Cheats
 {
@@ -6,6 +9,41 @@ namespace DSPCheats.Cheats
     {
         public override string GetCheatName() => "UnlockInstantly";
         public override string GetCheatDesc() => "Starting a research will instantly unlock it.";
+
+        public static GameObject UnlockAllButton;
+
+        public UnlockInstantly() : base()
+        {
+            if (!UnlockAllButton)
+            {
+                UnlockAllButton = GameObject.Instantiate(DSPCheatsPlugin.DSPCheatsAssets.LoadAsset<GameObject>("Assets/New Assets/UnlockAllButton.prefab"));
+                UnlockAllButton.GetComponent<Button>().image.sprite = Resources.Load<Sprite>("ui/textures/sprites/sci-fi/window-content-4");
+                UnlockAllButton.GetComponentInChildren<Text>().font = Resources.Load<Font>("ui/fonts/SAIRAB");
+                UnlockAllButton.GetComponent<Button>().onClick.AddListener(UnlockAll);
+            }
+        }
+
+        public static void UnlockAll()
+        {
+            foreach (TechProto tech in LDB.techs.dataArray.Where(x => x.Published))
+            {
+                if (!GameMain.history.TechUnlocked(tech.ID))
+                    UnlockTechRecursive(tech.ID, GameMain.history);
+            }
+        }
+
+        [HarmonyPostfix]
+        [HarmonyPatch(typeof(UITechTree), "_OnInit")]
+        public static void TechTreeInitPostfix(ref UITechTree __instance)
+        {
+            UnlockAllButton.transform.SetParent(__instance.transform);
+            UnlockAllButton.SetActive(true);
+            var newPos = __instance.tabButton1.transform.position;
+            newPos.x += 2.5f;
+            newPos.y -= 0.2f;
+            UnlockAllButton.transform.position = newPos;
+            UnlockAllButton.transform.localScale = __instance.tabButton1.transform.localScale;
+        }
 
         [HarmonyPostfix]
         [HarmonyPatch(typeof(UITechNode), "DoStartTech")]

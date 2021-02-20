@@ -22,12 +22,16 @@ namespace DSPCheats
         new internal static ManualLogSource Logger;
         new internal static ConfigFile Config;
 
+        public static UnityEngine.AssetBundle DSPCheatsAssets;
+
         public static List<Cheat> Cheats;
 
         public void Awake()
         {
             DSPCheatsPlugin.Logger = base.Logger;
             DSPCheatsPlugin.Config = base.Config;
+
+            DSPCheatsAssets = UnityEngine.AssetBundle.LoadFromMemory(Properties.Resources.dspcheatsbundle);
 
             harmony = new Harmony(ModGuid);
             harmony.PatchAll(typeof(ResetConfigHook));
