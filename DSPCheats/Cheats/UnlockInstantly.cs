@@ -12,15 +12,13 @@ namespace DSPCheats.Cheats
 
         public static GameObject UnlockAllButton;
 
-        public UnlockInstantly() : base()
+        static UnlockInstantly()
         {
-            if (!UnlockAllButton)
-            {
-                UnlockAllButton = GameObject.Instantiate(DSPCheatsPlugin.DSPCheatsAssets.LoadAsset<GameObject>("Assets/New Assets/UnlockAllButton.prefab"));
-                UnlockAllButton.GetComponent<Button>().image.sprite = Resources.Load<Sprite>("ui/textures/sprites/sci-fi/window-content-4");
-                UnlockAllButton.GetComponentInChildren<Text>().font = Resources.Load<Font>("ui/fonts/SAIRAB");
-                UnlockAllButton.GetComponent<Button>().onClick.AddListener(UnlockAll);
-            }
+            UnlockAllButton = GameObject.Instantiate(DSPCheatsPlugin.DSPCheatsAssets.LoadAsset<GameObject>("Assets/New Assets/UnlockAllButton.prefab"));
+            UnlockAllButton.GetComponent<Button>().image.sprite = Resources.Load<Sprite>("ui/textures/sprites/sci-fi/window-content-4");
+            UnlockAllButton.GetComponentInChildren<Text>().font = Resources.Load<Font>("ui/fonts/SAIRAB");
+            UnlockAllButton.GetComponent<Button>().onClick.AddListener(UnlockAll);
+            GameObject.DontDestroyOnLoad(UnlockAllButton);
         }
 
         public static void UnlockAll()
@@ -38,11 +36,11 @@ namespace DSPCheats.Cheats
         {
             UnlockAllButton.transform.SetParent(__instance.transform);
             UnlockAllButton.SetActive(true);
-            var newPos = __instance.tabButton1.transform.position;
-            newPos.x += 2.5f;
-            newPos.y -= 0.2f;
-            UnlockAllButton.transform.position = newPos;
-            UnlockAllButton.transform.localScale = __instance.tabButton1.transform.localScale;
+            /*RectTransform trans = UnlockAllButton.GetComponent<RectTransform>();
+            trans.anchorMin = Vector2.zero;
+            trans.anchorMax = Vector2.one;
+            trans.sizeDelta = Vector2.zero;
+            trans.position = new Vector3(335, -15, 0);*/
         }
 
         [HarmonyPostfix]
