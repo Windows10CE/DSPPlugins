@@ -45,7 +45,7 @@ namespace Dumper
                 {
                     try
                     {
-                        File.WriteAllText(Path.Combine(outputPath, proto.Name.Translate().ValidFileName()) + ".json", JsonUtility.ToJson(proto, true));
+                        File.WriteAllText(Path.Combine(outputPath, proto.Name.Translate().ValidFileName()) + $"-{proto.ID}.json", JsonUtility.ToJson(proto, true));
                     } catch { }
                 }
             }
