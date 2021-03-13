@@ -1,0 +1,9 @@
+{
+    "name": "MultithreadedFactories",
+    "version_number": "1.0.0",
+    "website_url": "https://github.com/Windows10CE/DSPPlugins",
+    "description": "Makes factories (planets) process in parallel instead of one by one. BACK UP YOUR SAVES",
+    "dependencies": [
+        "xiaoye97-BepInEx-5.4.5"
+    ]
+}
